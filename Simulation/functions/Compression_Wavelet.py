@@ -1,6 +1,6 @@
 __author__ = 'ptafo'
 from __future__ import division
-from Modulationspace_Gabor import mu_out_N
+from Compression_Gabor import mu_out_N
 import numpy as np
 import matplotlib.pyplot as plt
 import pywt
@@ -10,6 +10,7 @@ import pywt
 
 
 def reconstruct_wavelet(list,mu,f,wvlt):
+    # evaluate error from reconstructing the signal from the N highest coefficients
 
     L = len(f)
     listFlat = np.array([item for sublist in list for item in sublist])
@@ -22,11 +23,10 @@ def reconstruct_wavelet(list,mu,f,wvlt):
 
 
 def compression_wavelet(signal,wvlt,lvl,Ns,plot=0,*args,**kwargs):
+    # Signal compression of wavelets coefficients
 
-    # signal and noise
     L = len(signal)
 
-    #Gabor Lattice
     if lvl == "max":
         LVL = None
     else:

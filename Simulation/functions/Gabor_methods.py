@@ -1,9 +1,7 @@
 __author__ = 'ptafo'
 from __future__ import division
-import numpy as np
 from ltfatpy import gabimagepars, dgtreal, gabwin, idgtreal, gabdual
 from ltfatpy.sigproc.thresh import thresh
-import matplotlib.pyplot as plt
 from scipy.optimize import basinhopping, minimize_scalar
 from Splines_function import *
 

@@ -1,11 +1,10 @@
+__author__ = 'ptafo'
 from __future__ import division
 from Gabor_methods import *
-import numpy as np
-from ltfatpy import gabimagepars, dgtreal, gabwin, idgtreal, gabdual
-import matplotlib.pyplot as plt
 
 
 def modNorm(matrix,weight,p=1,C2=1):
+    # evaluate the discrete modulation norm
 
     V = np.power( np.abs(matrix), float(p))
     # meshgrid
@@ -19,6 +18,7 @@ def modNorm(matrix,weight,p=1,C2=1):
 
 
 def mu_out_N(matrix,N):
+    # find the the N-th highest mu
 
     mu   = np.sort(abs(matrix).flatten())[-np.array(N)]
 
@@ -27,6 +27,7 @@ def mu_out_N(matrix,N):
 
 
 def reconstruct_gabor(matrix,mu,f,gs,a,M):
+    # evaluate error from reconstructing the signal from the N highest coefficients
 
     L = len(f)
     N    = (abs(matrix) >=mu).sum()
@@ -38,14 +39,13 @@ def reconstruct_gabor(matrix,mu,f,gs,a,M):
 
 
 def compression_gabor(signal,alpha,beta,window, LW,Ns,plot=0,*args,**kwargs):
+    # Signal compression of Gabor coefficients
 
-    # signal and noise
     L = len(signal)
 
     # Gabor Frame
     a, M, Lg, N, Ngood = gabimagepars(L, int(L / alpha), int(L / beta))
-    if LW is None:
-        LW = Lg
+    if LW is None:  LW = Lg
     if window[0] == 'bsplines':
         gs = gabwin(mySpline(window[1], LW, 0)[-1], a, M, LW)[0]
     else:

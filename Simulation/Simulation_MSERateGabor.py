@@ -3,7 +3,7 @@ from __future__ import division
 import multiprocessing as mp
 import pandas as pd
 import argparse
-from doppler import *
+from functions.doppler import
 
 
 def parse_args():
