@@ -1,0 +1,9 @@
+##############
+python2.7
+#############
+
+ltfatpy
+scipy
+matplotlib
+argparse
+numpy

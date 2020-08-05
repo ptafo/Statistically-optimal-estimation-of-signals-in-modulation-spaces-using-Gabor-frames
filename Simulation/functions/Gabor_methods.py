@@ -1,4 +1,3 @@
-__author__ = 'ptafo'
 from __future__ import division
 from ltfatpy import gabimagepars, dgtreal, gabwin, idgtreal, gabdual
 from ltfatpy.sigproc.thresh import thresh

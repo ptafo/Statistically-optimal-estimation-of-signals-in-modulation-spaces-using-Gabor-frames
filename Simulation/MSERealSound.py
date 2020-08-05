@@ -1,8 +1,7 @@
-__author__ = 'ptafo'
 from __future__ import division
 import multiprocessing as mp
 import pandas as pd
-from realSound import *
+from functions.realSound import *
 
 
 def denoise_realsound(test,LW,SNR=10,Seed=1,th_method='hard'):
@@ -28,3 +27,9 @@ def MSE_realsound(test,LW,SNRs,Sims=10,ncores=4,filename='audio',th_method='hard
     return 10*np.log10(resVar_w_v)
 
 
+#test = realSound('./simple-melodic-piano_115bpm.wav')  # LW=3000
+#MSE_realsound(test,3000,[-10,10,30,50,100],2000,64,'piano')
+
+#test =  realSound('./Amsel.wav')
+#test.sig=test.sig[0:int(test.Fs*3.5)] # LW=200
+#MSE_realsound(test,200,[-10,10,30,50,100],2000,64,'Amsel')

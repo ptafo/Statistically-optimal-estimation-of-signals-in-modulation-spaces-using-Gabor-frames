@@ -1,4 +1,3 @@
-__author__ = 'ptafo'
 from __future__ import division
 from Compression_Gabor import mu_out_N
 import numpy as np

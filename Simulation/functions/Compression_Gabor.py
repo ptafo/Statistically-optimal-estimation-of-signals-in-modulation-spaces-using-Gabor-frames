@@ -1,4 +1,3 @@
-__author__ = 'ptafo'
 from __future__ import division
 from Gabor_methods import *
 
